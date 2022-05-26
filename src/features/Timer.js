@@ -126,6 +126,6 @@ const styles = StyleSheet.create({
   clearSubjectWrapper: {
     flexDirection: 'row',
     justifyContent: 'center',
-    paddingBottom: Device.modelName === 'SM-G960N' && spacing.lg,
+    paddingBottom: Device.modelName === 'SM-G960N' ? spacing.lg : '',
   },
 });

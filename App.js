@@ -30,13 +30,13 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       {!currentSubject ? (
         <>
-          <Focus addSubject={setCurrentSubject}  />
+          <Focus addSubject={setCurrentSubject} />
           <FocusHistory history={history} />
         </>
       ) : (
         <Timer
           focusSubject={currentSubject}
-          onTimerEnd={() => {}}
+          onTimerEnd={() => { }}
           clearSubject={() => setCurrentSubject(null)}
           addHistory={setHistory}
         />
@@ -48,7 +48,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: Platform.OS === 'android' && StatusBar.currentHeight,
+    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : '',
     backgroundColor: colors.darkBlue,
   },
 });
