@@ -23,13 +23,14 @@ export const Timer = ({
   focusSubject,
   onTimerEnd,
   clearSubject,
-  addHistory,
+  // addHistory,
+  // onTimerEnd
 }) => {
   useKeepAwake();
   const [isStarted, setIsStarted] = useState(false);
   const [progress, setProgress] = useState(1);
   const [minutes, setMinutes] = useState(0.05);
-  console.log(Device.brand, Device.modelName, Device.deviceName);
+  // console.log(Device.brand, Device.modelName, Device.deviceName);
 
   const onEnd = (reset) => {
     Vibration.vibrate(PATTERN);
@@ -38,7 +39,7 @@ export const Timer = ({
     console.log('Focus ended-1');
     reset();
     console.log('Focus ended-2');
-    addHistory((prev) => [...prev, focusSubject]);
+    onTimerEnd(focusSubject);
   };
 
   return (

@@ -23,7 +23,7 @@ import { Card } from 'react-native-paper';
 
 export default function App() {
   useKeepAwake();
-  const [currentSubject, setCurrentSubject] = useState();
+  const [currentSubject, setCurrentSubject] = useState("");
   const [history, setHistory] = useState([]);
   // console.log(currentSubject);
   return (
@@ -36,9 +36,9 @@ export default function App() {
       ) : (
         <Timer
           focusSubject={currentSubject}
-          onTimerEnd={() => { }}
+          onTimerEnd={(subject) => setHistory([...history, subject])}
           clearSubject={() => setCurrentSubject(null)}
-          addHistory={setHistory}
+        // addHistory={setHistory}
         />
       )}
     </SafeAreaView>

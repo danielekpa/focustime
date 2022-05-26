@@ -19,8 +19,7 @@ export const FocusHistory = ({ history }) => {
       <FlatList
         data={history}
         renderItem={renderItem}
-
-        // keyExtractor={(history, item) => history.indexOf(item)}
+        keyExtractor={(history, item) => history.indexOf(item)}
       />
     </View>
   );
